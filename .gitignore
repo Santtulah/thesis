@@ -1,0 +1,22 @@
+# --- Secrets (Never push these) ---
+.env
+.env.local
+secrets.json
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.so
+
+# --- Virtual Environments (If you use them) ---
+env/
+venv/
+.venv/
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db

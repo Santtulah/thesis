@@ -2,16 +2,15 @@ image: python:3.11
 
 pages:
   stage: deploy
-  tags: general
+  tags:
+    - general
   script:
     - pip install --no-cache-dir nbconvert jupyter
     - mkdir -p public
-    # Convert notebook(s) to HTML
     - jupyter nbconvert --to html --output-dir public fingrid.ipynb
-    # Optional: make a nice landing page
     - |
       python - <<'PY'
-      import os, glob, pathlib
+      import glob, pathlib
       htmls = sorted(glob.glob("public/*.html"))
       links = "\n".join([f'<li><a href="{pathlib.Path(h).name}">{pathlib.Path(h).stem}</a></li>' for h in htmls])
       index = f"""<!doctype html><meta charset="utf-8">

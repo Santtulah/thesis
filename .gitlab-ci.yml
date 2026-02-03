@@ -2,6 +2,7 @@ image: python:3.11
 
 pages:
   stage: deploy
+  tags: general
   script:
     - pip install --no-cache-dir nbconvert jupyter
     - mkdir -p public
